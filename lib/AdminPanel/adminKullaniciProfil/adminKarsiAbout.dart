@@ -42,14 +42,7 @@ class _AdminKarsiProfilAboutState extends State<AdminKarsiProfilAbout> {
     return  ListView(
       padding: EdgeInsets.only(top: 10.0, left: 8.0.w, right: 16.0.w),
       children: [
-        Padding(
-          padding:  EdgeInsets.symmetric(vertical: 16.0.w),
-          child: GestureDetector(
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => KullaniciProfilAyarlariDuzenle(card: widget.card,)));
-              },
-              child: Container(color:Colors.green,child: Center(child: Text("Kullanıcı Bilgilerini Düzenle",style: TextStyle(fontSize: 17.0.h,fontWeight: FontWeight.bold),)),)),
-        ),
+
         ProfilListTile(
           title: "Doğum Tarihi",
           icon: Icon(
@@ -147,120 +140,6 @@ class _AdminKarsiProfilAboutState extends State<AdminKarsiProfilAbout> {
           ),
         ),
 
-        widget.kafalar_profil.isNotEmpty ? GridView.count(
-          shrinkWrap: true,
-          crossAxisCount: 4,
-          padding: EdgeInsets.fromLTRB(23.0.w, 25.0.h, 23.0.w, 30.0.h),
-          mainAxisSpacing: 8.0.h,
-          crossAxisSpacing: 18.0.w,
-          physics: NeverScrollableScrollPhysics(),
-          children: List.generate(8, (index) {
-
-
-            var seletectedColor = widget.kafalarlar.contains(profil_iconlar[index]["title"])
-                ? Theme.of(context).accentColor
-                : Colors.white;
-
-
-
-            return  GestureDetector(
-              onTap: () async {
-                setState(() {
-
-                });
-                if(widget.kafalarlar.contains(profil_iconlar[index]["title"])){
-
-                  widget.kafalarlar.contains(profil_iconlar[index]["title"].toString())
-                      ?
-                  !widget.kafalarlar.remove(profil_iconlar[index]["title"].toString())
-                      : null;
-                  await _firestoreDBService.usersProfil_Kafaya_Oydan_Cikar(
-                    widget.card['userId'],
-                    widget.kafalarlar,
-                    _userModel.user.userId,
-                    widget.kafalar_profil[index].name,
-                    widget.kafalar_profil[index].sayi,
-                  ).then((value) {
-                    widget.kafalar_profil[index].sayi=widget.kafalar_profil[index].sayi-1;
-                    setState(() {});
-                  });
-
-
-
-                }else {
-                  !widget.kafalarlar.contains(profil_iconlar[index]["title"].toString())
-                      ?
-                  widget.kafalarlar.add(profil_iconlar[index]["title"].toString())
-                      : null;
-                  await _firestoreDBService.usersProfil_Kafaya_Oy_Ver(
-                    widget.card['userId'],
-                    widget.kafalarlar,
-                    _userModel.user.userId,
-                    widget.kafalar_profil[index].name,
-                    widget.kafalar_profil[index].sayi,
-                  ).then((value) {
-                    widget.kafalar_profil[index].sayi=widget.kafalar_profil[index].sayi+1;
-                    setState(() {});
-                  });
-
-
-                }
-              },
-              child: Container(
-                width: 80.66666666666667.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(11.70.w)),
-                  boxShadow: [
-                    BoxShadow(color: const Color(0x29000000), offset: Offset(0, 2), blurRadius: 22.70, spreadRadius: 0)
-                  ],
-                  color: seletectedColor,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ColorFiltered(
-                      colorFilter: ColorFilter.mode(Colors.transparent, BlendMode.saturation),
-                      child: Image.asset(
-                        widget.kafalar_profil[index].icon,
-                        width: 50.0.w,
-                        height: 25.0.w,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        widget.kafalar_profil[index].name,
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 11.3.spByWidth),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Text(
-                        widget.kafalar_profil[index].sayi.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 11.3.spByWidth),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-
-
-                  ],
-                ),
-              ),
-            );
-          }),
-        ) : Container(),
 
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10.0.w),

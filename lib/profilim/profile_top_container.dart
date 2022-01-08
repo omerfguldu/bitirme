@@ -103,16 +103,7 @@ class _ProfilInfoContainerState extends State<ProfilInfoContainer> {
 
 
                             )),
-                           _userModel.user.uyelikTipi == "gold" ?   Padding(
-                             padding:  EdgeInsets.only(right: 5.0.w,),
-                             child: Container(width:33.0.w,height: 16.0.h,child: Image.asset("assets/gold.png",)),
-                           ) : _userModel.user.uyelikTipi == "plus" ?   Padding(
-                             padding:  EdgeInsets.only(right: 5.0.w),
-                             child: Container(width:33.0.w,height: 16.0.h,child: Image.asset("assets/PLUS.png",)),
-                           ) : _userModel.user.uyelikTipi == "standart" ?   Padding(
-                             padding: EdgeInsets.only(right: 5.0.w),
-                             child: Container(),
-                           ) : Container(),
+
                           ],
                         ),
                       ),

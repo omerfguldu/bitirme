@@ -155,20 +155,11 @@ class _EtkinlikOlusturState extends State<EtkinlikOlustur> {
                         child: RaisedButton(
                             color: _etkinlikTipi == "Turnuva" ? accentColor : backgroundColor,
                             onPressed: () {
-                              if (_userModel.user.uyelikTipi == "standart") {
-                                var dialogBilgi = AlertBilgilendirme(
-                                  message: "Bu özellik sadece Gold ve Plus üyeler tarafından kullanılabilir.",
-                                  onPostivePressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                );
 
-                                showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                              } else {
                                 setState(() {
                                   _etkinlikTipi = "Turnuva";
                                 });
-                              }
+
                             },
                             child: Text("Turnuva",
                                 style: TextStyle(
@@ -525,221 +516,9 @@ class _EtkinlikOlusturState extends State<EtkinlikOlustur> {
                   SizedBox(
                     height: 39.0.h,
                   ),
-                  Opacity(
-                    opacity: 0.85,
-                    child: Text("Aranan Şartlar",
-                        style: TextStyle(
-                            color: const Color(0xd9343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                  ),
-                  ListTile(
-                    title: Text(secilenIlIlceler.isEmpty ? "Konum" : secilenIlIlceler.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                    contentPadding: EdgeInsets.zero,
-                    onTap: () {
-                      if (_userModel.user.uyelikTipi == "standart") {
-                        var dialogBilgi = AlertBilgilendirme(
-                          message: "Bu özellik sadece Gold ve Plus üyeler tarafından kullanılabilir.",
-                          onPostivePressed: () {
-                            Navigator.pop(context);
-                          },
-                        );
-
-                        showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                      } else {
-                        _showIlveIlceListesi(context);
-                      }
-                    },
-                    trailing: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Theme.of(context).primaryColor,
-                      size: 16.0.h,
-                    ),
-                  ),
-                  Divider(
-                    height: 3.0,
-                    color: Colors.black,
-                  ),
-                  ListTile(
-                    title: Text(secilenOgrenimDurumu.isEmpty ? "Öğrenim Durumu" : secilenOgrenimDurumu.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                    contentPadding: EdgeInsets.zero,
-                    onTap: () {
-                      if (_userModel.user.uyelikTipi == "standart") {
-                        var dialogBilgi = AlertBilgilendirme(
-                          message: "Bu özellik sadece Gold ve Plus üyeler tarafından kullanılabilir.",
-                          onPostivePressed: () {
-                            Navigator.pop(context);
-                          },
-                        );
-
-                        showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                      } else {
-                        _showOgrenimDurumu(context);
-                      }
-                    },
-                    trailing: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Theme.of(context).primaryColor,
-                      size: 16.0.h,
-                    ),
-                  ),
-                  Divider(
-                    height: 3.0,
-                    color: Colors.black,
-                  ),
-                  ListTile(
-                    title: Text(secilenMeslekler.isEmpty ? "Meslek" : secilenMeslekler.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                    contentPadding: EdgeInsets.zero,
-                    onTap: () {
-                      if (_userModel.user.uyelikTipi == "standart") {
-                        var dialogBilgi = AlertBilgilendirme(
-                          message: "Bu özellik sadece Gold ve Plus üyeler tarafından kullanılabilir.",
-                          onPostivePressed: () {
-                            Navigator.pop(context);
-                          },
-                        );
-
-                        showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                      } else {
-                        _showMeslekler(context);
-                      }
-                    },
-                    trailing: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Theme.of(context).primaryColor,
-                      size: 16.0.h,
-                    ),
-                  ),
-                  Divider(
-                    height: 3.0,
-                    color: Colors.black,
-                  ),
-                  ListTile(
-                    title: Text(secilenYas.isEmpty ? "Yaş" : secilenYas.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                    contentPadding: EdgeInsets.zero,
-                    onTap: () {
-                      if (_userModel.user.uyelikTipi != "gold") {
-                        var dialogBilgi = AlertBilgilendirme(
-                          message: "Bu özellik sadece Gold üyeler tarafından kullanılabilir.",
-                          onPostivePressed: () {
-                            Navigator.pop(context);
-                          },
-                        );
-                        showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                      } else {
-                        _showYasAraliklari(context);
-                      }
-                    },
-                    trailing: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Theme.of(context).primaryColor,
-                      size: 16.0.h,
-                    ),
-                  ),
 
 
-                  Divider(
-                    height: 3.0,
-                    color: Colors.black,
-                  ),
-                  ListTile(
-                    title: Text(secilenIliskiDurumlari.isEmpty ? "İlişki Durumu" : secilenIliskiDurumlari.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                    contentPadding: EdgeInsets.zero,
-                    onTap: () {
-                      if (_userModel.user.uyelikTipi != "gold") {
-                        var dialogBilgi = AlertBilgilendirme(
-                          message: "Bu özellik sadece Gold üyeler tarafından kullanılabilir.",
-                          onPostivePressed: () {
-                            Navigator.pop(context);
-                          },
-                        );
 
-                        showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                      } else {
-                        _showIliskiDurumu(context);
-                      }
-                    },
-                    trailing: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Theme.of(context).primaryColor,
-                      size: 16.0.h,
-                    ),
-                  ),
-                  Divider(
-                    height: 3.0,
-                    color: Colors.black,
-                  ),
-                  ListTile(
-                    title: Text(secilenCinsiyet.isEmpty ? "Cinsiyet" : secilenCinsiyet.toString(),
-                        style: TextStyle(
-                            color: const Color(0xff343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0.spByWidth),
-                        textAlign: TextAlign.left),
-                    contentPadding: EdgeInsets.zero,
-                    onTap: () {
-                      if (_userModel.user.uyelikTipi != "gold") {
-                        var dialogBilgi = AlertBilgilendirme(
-                          message: "Bu özellik sadece Gold  üyeler tarafından kullanılabilir.",
-                          onPostivePressed: () {
-                            Navigator.pop(context);
-                          },
-                        );
-                        showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                      } else {
-                        _showCinsiyet(context);
-                      }
-                    },
-                    trailing: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Theme.of(context).primaryColor,
-                      size: 16.0.h,
-                    ),
-                  ),
-                  Divider(
-                    height: 3.0,
-                    color: Colors.black,
-                  ),
                   SizedBox(
                     height: 39.0.h,
                   ),
@@ -797,20 +576,11 @@ class _EtkinlikOlusturState extends State<EtkinlikOlustur> {
                       groupValue: _katilimci,
                       activeColor: Theme.of(context).primaryColor,
                       onChanged: (Katilimci value) {
-                        if (_userModel.user.uyelikTipi != "gold") {
-                          var dialogBilgi = AlertBilgilendirme(
-                            message: "Bu özellik sadece Gold  üyeler tarafından kullanılabilir. ",
-                            onPostivePressed: () {
-                              Navigator.pop(context);
-                            },
-                          );
 
-                          showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                        } else {
                           setState(() {
                             _katilimci = value;
                           });
-                        }
+
                       },
                     ),
                   ),
@@ -934,62 +704,14 @@ class _EtkinlikOlusturState extends State<EtkinlikOlustur> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(65.7.w),
                       ),
-                      onPressed: () async {
-                        if (_userModel.user.uyelikTipi == "standart") {
-                          if (_userModel.user.acilanetkinliksayim >= 5) {
-                            var dialogBilgi = AlertBilgilendirme(
-                              message: "Standart Paketde haftalık en fazla 5 etkinlik açabilirsiniz.",
-                              onPostivePressed: () {
-                                Navigator.pop(context);
-                              },
-                            );
-
-                            showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                          } else {
+                      onPressed: () async
+                      {
                             etkinlikOlustur();
                             _userModel.user.acilanetkinliksayim++;
                             FirebaseFirestore.instance
                                 .collection("users")
                                 .doc(_userModel.user.userId)
                                 .update({'acilanetkinliksayisi': FieldValue.increment(1)});
-                          }
-                        } else if (_userModel.user.uyelikTipi == "plus") {
-                          if (_userModel.user.acilanetkinliksayim >= 10) {
-                            var dialogBilgi = AlertBilgilendirme(
-                              message: "Plus Paketde haftalık en fazla 10 etkinlik açabilirsiniz.",
-                              onPostivePressed: () {
-                                Navigator.pop(context);
-                              },
-                            );
-
-                            showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                          } else {
-                            etkinlikOlustur();
-                            _userModel.user.acilanetkinliksayim++;
-                            FirebaseFirestore.instance
-                                .collection("users")
-                                .doc(_userModel.user.userId)
-                                .update({'acilanetkinliksayisi': FieldValue.increment(1)});
-                          }
-                        } else if (_userModel.user.uyelikTipi == "gold") {
-                          if (_userModel.user.acilanetkinliksayim >= 20) {
-                            var dialogBilgi = AlertBilgilendirme(
-                              message: "Plus Paketde haftalık en fazla 20 etkinlik açabilirsiniz.",
-                              onPostivePressed: () {
-                                Navigator.pop(context);
-                              },
-                            );
-                            showDialog(context: context, builder: (BuildContext context) => dialogBilgi);
-                          } else {
-                            etkinlikOlustur();
-                            _userModel.user.acilanetkinliksayim++;
-                            FirebaseFirestore.instance
-                                .collection("users")
-                                .doc(_userModel.user.userId)
-                                .update({'acilanetkinliksayisi': FieldValue.increment(1)});
-                          }
-
-                        }
                       },
                       elevation: 8.3,
                       child: Text(

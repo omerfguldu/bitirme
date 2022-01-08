@@ -65,10 +65,9 @@ class _ProfilimState extends State<Profilim> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 5, vsync: this);
+    _tabController = new TabController(length: 4, vsync: this);
 
     storage = firebase_storage.FirebaseStorage.instance;
-    profil_iconlari_getir();
     takipvetakipcigetir();
     final _userModel = Provider.of<UserModel>(context, listen: false);
     photoStream = FirebaseFirestore.instance
@@ -89,73 +88,6 @@ class _ProfilimState extends State<Profilim> with SingleTickerProviderStateMixin
     print("takipci sayısı:" + _userModel.user.takipci.toString());
   }
 
-  Future<void> profil_iconlari_getir() async {
-    final _userModel = Provider.of<UserModel>(context, listen: false);
-    await FirebaseFirestore.instance
-        .collection("users")
-        .doc(_userModel.user.userId)
-        .collection("profil_iconlar")
-        .get()
-        .then((value) {
-      for (QueryDocumentSnapshot item in value.docs) {
-        Map<String, String> Profil_icon_sayilari = Map();
-
-        if (item.id == "lider") {
-          Profil_icon_sayilari['title'] = "Lider";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list.add(Profil_kafalar(name: "Lider", icon: "assets/profil_icon/lider.png", sayi: item['sayi']));
-        } else if (item.id == "cilgin") {
-          Profil_icon_sayilari['title'] = "Çılgın";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list.add(Profil_kafalar(name: "Çılgın", icon: "assets/profil_icon/cilgin.png", sayi: item['sayi']));
-        } else if (item.id == "adaletli") {
-          Profil_icon_sayilari['title'] = "Adaletli";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list.add(Profil_kafalar(name: "Adaletli", icon: "assets/profil_icon/adalet.png", sayi: item['sayi']));
-        } else if (item.id == "saygili") {
-          Profil_icon_sayilari['title'] = "Saygılı";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list.add(Profil_kafalar(name: "Saygılı", icon: "assets/profil_icon/saygili.png", sayi: item['sayi']));
-        } else if (item.id == "guvenilir") {
-          Profil_icon_sayilari['title'] = "Güvenilir";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list
-              .add(Profil_kafalar(name: "Güvenilir", icon: "assets/profil_icon/guvenilir.png", sayi: item['sayi']));
-        } else if (item.id == "romantik") {
-          Profil_icon_sayilari['title'] = "Romantik";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list
-              .add(Profil_kafalar(name: "Romantik", icon: "assets/profil_icon/romantik.png", sayi: item['sayi']));
-        } else if (item.id == "comert") {
-          Profil_icon_sayilari['title'] = "Cömert";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list.add(Profil_kafalar(name: "Cömert", icon: "assets/profil_icon/comert.png", sayi: item['sayi']));
-        } else if (item.id == "ek") {
-          Profil_icon_sayilari['title'] = "EK";
-          Profil_icon_sayilari['sayi'] = item['sayi'].toString();
-          kafalar_map_list.add(Profil_icon_sayilari);
-
-          kafalar_list.add(Profil_kafalar(name: "EK", icon: "assets/profil_icon/istekli.png", sayi: item['sayi']));
-        }
-        kafalar_profil_icon_sayilari.add(item['sayi'].toString());
-      }
-      setState(() {});
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -264,34 +196,6 @@ class _ProfilimState extends State<Profilim> with SingleTickerProviderStateMixin
                               },
                             );
                     },
-                  ),
-                  ListView(
-                    padding: EdgeInsets.all(0),
-                    children: [
-                      _buildYorumlarGrafikleri(),
-                      _buildYorumlar(),
-                      SizedBox(
-                        height: 4.0.h,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0.w),
-                        child: ProfilListTile(
-                          title: "Etkinlik Katılım Oranı:",
-                          icon: Icon(
-                            Icons.supervisor_account,
-                            size: 24.0.h,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          trailingTitle: "% " +
-                                  ((_userModel.user.etkinlikKatilma / toplamkatilma.toDouble()) * 100)
-                                      .toStringAsFixed(2) ??
-                              "",
-                        ),
-                      ),
-                      SizedBox(
-                        height: 110.0.h,
-                      ),
-                    ],
                   ),
                   StreamBuilder<QuerySnapshot>(
                       stream: photoStream,

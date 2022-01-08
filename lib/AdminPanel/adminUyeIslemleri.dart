@@ -44,7 +44,7 @@ class _AdminUyeIslemleriState extends State<AdminUyeIslemleri> with SingleTicker
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 3, vsync: this);
+    _tabController = new TabController(length: 2, vsync: this);
     _tabController.addListener(() {
       setState(() {
         print("Tab Index ${_tabController.index}");
@@ -77,7 +77,7 @@ class _AdminUyeIslemleriState extends State<AdminUyeIslemleri> with SingleTicker
     final _userModel = Provider.of<UserModel>(context, listen: true);
     return Scaffold(
       floatingActionButton:
-          MyFloatingButton(tabController: _tabController, pushableScreens: [AdminYoneticiAta(), TemsilciAta()]),
+          MyFloatingButton(tabController: _tabController, pushableScreens: [AdminYoneticiAta()]),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       backgroundColor: Renkler.backGroundColor,
       appBar: buildAppBar(context, "Üye İşlemleri"),

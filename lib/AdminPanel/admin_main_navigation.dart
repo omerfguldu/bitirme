@@ -45,6 +45,7 @@ class _AdminMainNavigationState extends State<AdminMainNavigation> {
   @override
   Widget build(BuildContext context) {
     final _userModel = Provider.of<UserModel>(context, listen: true);
+    print("object: "+_userModel.user.toString());
     return WillPopScope(
       onWillPop: () async {
         if (_navigationQueue.isEmpty){
@@ -83,10 +84,7 @@ class _AdminMainNavigationState extends State<AdminMainNavigation> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CircleAvatar(
-                              backgroundImage: NetworkImage(_userModel.user.avatarImageUrl.toString()),
-                              radius: 40.0,
-                            ),
+
                             Text(_userModel.user.adsoyad.toString(),
                                 style: TextStyle(
                                     color: const Color(0xffffffff),

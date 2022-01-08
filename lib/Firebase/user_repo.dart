@@ -61,7 +61,7 @@ class UserRepository implements AuthBase {
   @override
   Future<Users> signInWithEmailandPassword(String email, String sifre) async {
     Users _user = await _firebaseAuthService.signInWithEmailandPassword(email, sifre);
-
+    print("gelen userid: "+_user.email);
     return await _firestoreDBService.readUser(_user.userId, email);
   }
 

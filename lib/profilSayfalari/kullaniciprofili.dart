@@ -64,7 +64,7 @@ class _KarsiKullaniciProfiliState extends State<KarsiKullaniciProfili> with Sing
   void initState() {
     super.initState();
 
-    _tabController = new TabController(length: 5, vsync: this);
+    _tabController = new TabController(length: 4, vsync: this);
 
     storage = firebase_storage.FirebaseStorage.instance;
     profil_iconlari_getir();
@@ -322,34 +322,7 @@ class _KarsiKullaniciProfiliState extends State<KarsiKullaniciProfili> with Sing
                             );
                     },
                   ),
-                  ListView(
-                    padding: EdgeInsets.all(0),
-                    children: [
-                      _buildYorumlarGrafikleri(),
-                      _buildYorumlar(),
-                      SizedBox(
-                        height: 4.0.h,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0.w),
-                        child: ProfilListTile(
-                          title: "Etkinlik Katılım Oranı:",
-                          icon: Icon(
-                            Icons.supervisor_account,
-                            size: 24.0.w,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          trailingTitle: "% " +
-                                  ((widget.card['etkinlikKatildi'] / toplamkatilma.toDouble()) * 100)
-                                      .toStringAsFixed(2) ??
-                              "",
-                        ),
-                      ),
-                      SizedBox(
-                        height: 110.0.h,
-                      ),
-                    ],
-                  ),
+
                   albumilsLoading
                       ? Center(
                           child: CircularProgressIndicator(),

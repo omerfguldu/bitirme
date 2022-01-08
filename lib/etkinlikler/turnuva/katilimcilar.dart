@@ -168,6 +168,7 @@ class _KatilimcilarState extends State<Katilimcilar> {
                     if (widget.qn.docs.length > totalUsers.length) {
                       totalUsers.add(snapshot.data.docs[0]);
                     }
+
                     String id = snapshot.data.docs[0]['userId'].toString();
 
                     return _userModel.user.userId != snapshot.data.docs[0]['userId'].toString()

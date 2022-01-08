@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\etkinlik_uygulamasi\\build\\image_picker\\intermediates\\res\\merged\\debug\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "/Users/emre/Documents/GitHub/bitirme/build/image_picker/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/values-pt-rPT/values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "D:\\etkinlik_uygulamasi\\build\\image_picker\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "/Users/emre/Documents/GitHub/bitirme/build/image_picker/intermediates/res/merged/debug/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/values-pt-rPT/values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

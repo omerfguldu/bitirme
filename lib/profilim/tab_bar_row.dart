@@ -32,7 +32,6 @@ class _ProfilTabItemsState extends State<ProfilTabItems> {
           Tab(child: Icon(Icons.person)),
           Tab(child: Icon(Icons.emoji_emotions)),
           Tab(child: Icon(Icons.location_on)),
-          Tab(child: Icon(Icons.star_rate)),
           Tab(child: Icon(Icons.photo_album)),
         ],
       ),

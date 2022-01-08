@@ -20,6 +20,7 @@ import 'dart:collection';
 import 'package:etkinlik_kafasi/extensions/size_extension.dart';
 import 'package:provider/provider.dart';
 
+import 'AdminPanel/admin_main_navigation.dart';
 import 'etkinlikler/etkinlik_olustur.dart';
 
 class MainNavigation extends StatefulWidget {
@@ -209,36 +210,8 @@ class _MainNavigationState extends State<MainNavigation> {
                   color: Theme.of(context).buttonColor,
                 ),
               ),
-              ListTile(
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Hakkimizda()));
-                },
-                title: Text(
-                  "Hakkımızda",
-                  style: Theme.of(context).textTheme.caption.copyWith(fontSize: 15.0.spByWidth),
-                ),
-                leading: Icon(
-                  Icons.info,
-                  size: 20.0.w,
-                  color: Theme.of(context).buttonColor,
-                ),
-              ),
-              ListTile(
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SikcaSorulanSorular()));
-                },
-                title: Text(
-                  "Sıkça Sorulan Sorular",
-                  style: Theme.of(context).textTheme.caption.copyWith(fontSize: 15.0.spByWidth),
-                ),
-                leading: Icon(
-                  Icons.help,
-                  size: 20.0.w,
-                  color: Theme.of(context).buttonColor,
-                ),
-              ),
+
+
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -271,7 +244,30 @@ class _MainNavigationState extends State<MainNavigation> {
                   color: Theme.of(context).buttonColor,
                 ),
               ),
-              
+              _userModel.user.yoneticimi ?
+              ListTile(
+                onTap: () {
+
+                  Navigator.of(context, rootNavigator: true).push(
+                    MaterialPageRoute(
+                      builder: (context) => ChangeNotifierProvider(
+                        create: (context) => UserModel(),
+                        child: AdminLandingPage(),
+                      ),
+                    ),
+                  );
+
+                },
+                title: Text(
+                  "Admin Giriş",
+                  style: Theme.of(context).textTheme.caption.copyWith(fontSize: 15.0.spByWidth),
+                ),
+                leading: Icon(
+                  Icons.admin_panel_settings,
+                  size: 20.0.w,
+                  color: Theme.of(context).buttonColor,
+                ),
+              ): Container(),
 
             ]),
           ),
@@ -284,7 +280,6 @@ class _MainNavigationState extends State<MainNavigation> {
               Icon(Icons.home, size: 40, color: Theme.of(context).backgroundColor),
               Icon(Icons.date_range, size: 30, color: Theme.of(context).backgroundColor),
               Icon(Icons.add, size: 30, color: Theme.of(context).backgroundColor),
-              Icon(Icons.message, size: 30, color: Theme.of(context).backgroundColor),
               Icon(Icons.person, size: 30, color: Theme.of(context).backgroundColor),
             ],
             color: Theme.of(context).primaryColor,
@@ -323,8 +318,6 @@ class _MainNavigationState extends State<MainNavigation> {
       case 2:
         return EtkinlikOlustur();
       case 3:
-        return MesajlarNewAnasayfa();
-      case 4:
         return Profilim();
     }
   }

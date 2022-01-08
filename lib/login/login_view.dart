@@ -241,6 +241,8 @@ class _LoginViewState extends State<LoginView> {
     var errorMessage = "";
     try {
       Users _girisYapanUser = await _userModel.signInWithEmailandPassword(email, password);
+
+      print("geldimi buraya _ :"+_girisYapanUser.toString());
       if (_girisYapanUser != null) {
         setState(() {
           loading = false;

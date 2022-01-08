@@ -104,36 +104,7 @@ class _AdminKarsiKullaniciInfoContainerState extends State<AdminKarsiKullaniciIn
                           )),
 
 
-                          Row(
-                            children: [
-                              widget.card['uyelikTipi'] == "gold" ?   Padding(
-                                padding:  EdgeInsets.only(right: 5.0.w,bottom: 20.0.h),
-                                child: Container(width:33.0.w,height: 16.0.h,child: Image.asset("assets/gold.png",)),
-                              ) : widget.card['uyelikTipi'] == "plus" ?   Padding(
-                                padding:  EdgeInsets.only(right: 5.0.w,bottom: 20.0.h),
-                                child: Container(width:33.0.w,height: 16.0.h,child: Image.asset("assets/PLUS.png",)),
-                              ) :widget.card['uyelikTipi'] == "standart" ?   Padding(
-                                padding: EdgeInsets.only(right: 5.0.w,bottom: 20.0.h),
-                                child: Container(),
-                              ) : Container(),
-                              InkWell(
-                                onTap: (){
-                                  var dialogBilgi = AdminAlertUyelik(
-                                    userid: widget.card['userId'],
-                                  );
 
-                                  showDialog(
-                                      context: context,
-                                      builder: (
-                                          BuildContext context) => dialogBilgi);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 10,left: 2),
-                                  child: Icon(Icons.create,color: Colors.blue,size: 17.0.h,),
-                                ),
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                       Expanded(

@@ -1,26 +1,26 @@
 [
     {
-        "merged": "D:\\etkinlik_uygulamasi\\build\\video_player\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
-        "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\layout\\custom_dialog.xml"
+        "merged": "/Users/emre/Documents/GitHub/bitirme/build/video_player/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "D:\\etkinlik_uygulamasi\\build\\video_player\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "/Users/emre/Documents/GitHub/bitirme/build/video_player/intermediates/res/merged/debug/layout/notification_action.xml",
+        "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/layout/notification_action.xml"
     },
     {
-        "merged": "D:\\etkinlik_uygulamasi\\build\\video_player\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\layout\\notification_template_icon_group.xml"
+        "merged": "/Users/emre/Documents/GitHub/bitirme/build/video_player/intermediates/res/merged/debug/layout/custom_dialog.xml",
+        "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/layout/custom_dialog.xml"
     },
     {
-        "merged": "D:\\etkinlik_uygulamasi\\build\\video_player\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\layout\\notification_template_part_time.xml"
+        "merged": "/Users/emre/Documents/GitHub/bitirme/build/video_player/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "D:\\etkinlik_uygulamasi\\build\\video_player\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\layout\\notification_action.xml"
+        "merged": "/Users/emre/Documents/GitHub/bitirme/build/video_player/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
+        "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/layout/notification_template_icon_group.xml"
     },
     {
-        "merged": "D:\\etkinlik_uygulamasi\\build\\video_player\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\OmerFaruk\\.gradle\\caches\\transforms-3\\a3f3e5b22e9e19bc595855dd32e920d8\\transformed\\core-1.1.0\\res\\layout\\notification_action_tombstone.xml"
+        "merged": "/Users/emre/Documents/GitHub/bitirme/build/video_player/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/emre/.gradle/caches/transforms-3/a3f3e5b22e9e19bc595855dd32e920d8/transformed/core-1.1.0/res/layout/notification_action_tombstone.xml"
     }
 ]

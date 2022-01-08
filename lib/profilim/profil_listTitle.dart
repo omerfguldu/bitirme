@@ -23,7 +23,7 @@ class ProfilListTile extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   fontFamily: "OpenSans",
                   fontStyle: FontStyle.normal,
-                  fontSize: 13.3.spByWidth),
+                  fontSize: 16.3.spByWidth),
               textAlign: TextAlign.left),
         ),
 
@@ -37,7 +37,7 @@ class ProfilListTile extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontFamily: "OpenSans",
                     fontStyle: FontStyle.normal,
-                    fontSize: 13.3.spByWidth),
+                    fontSize: 15.3.spByWidth),
                 textAlign: TextAlign.left),
           ),
         ),

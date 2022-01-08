@@ -121,7 +121,7 @@ class Users extends ChangeNotifier {
     kullaniciVerileri['temsilcimi'] = false;
     kullaniciVerileri['hakkimda'] = users.hakkimda.isEmpty ? " " : users.hakkimda;
     kullaniciVerileri['kafalar'] = users.kafalar;
-    kullaniciVerileri['uyelikTipi'] = users.uyelikTipi == null ? "plus" : users.uyelikTipi;
+    kullaniciVerileri['uyelikTipi'] = users.uyelikTipi == null ? "gold" : users.uyelikTipi;
     kullaniciVerileri['hedefhafta'] = users.hedefhafta == null ? Timestamp.now() : users.hedefhafta;
     kullaniciVerileri['katilinanetkinliksayisi'] = users.katilinanetkinliksayim  == null ? 0 : users.katilinanetkinliksayim;
     kullaniciVerileri['acilanetkinliksayisi'] = users.acilanetkinliksayim == null ? 0 : users.acilanetkinliksayim;

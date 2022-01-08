@@ -59,7 +59,7 @@ class _AdminUyeKullaniciProfiliState extends State<AdminUyeKullaniciProfili> wit
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 5, vsync: this);
+    _tabController = new TabController(length: 4, vsync: this);
     toplamkatilma =(widget.card['etkinlikKatildi']+widget.card['etkinlikKatilmadi']) == 0 ? 1 :(widget.card['etkinlikKatildi']+widget.card['etkinlikKatilmadi']) ;
 
     storage = firebase_storage.FirebaseStorage.instance;
@@ -261,30 +261,7 @@ class _AdminUyeKullaniciProfiliState extends State<AdminUyeKullaniciProfili> wit
                       );
                     },
                   ),
-                  ListView(
-                    padding: EdgeInsets.all(0),
-                    children: [
 
-                      _buildYorumlarGrafikleri(),
-
-                      SizedBox(height: 4,),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: ProfilListTile(
-                          title: "Etkinlik Katılım Oranı:",
-                          icon: Icon(
-                            Icons.supervisor_account,
-                            size: 24.0.h,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          trailingTitle:"% "+( (widget.card['etkinlikKatildi']/toplamkatilma.toDouble())*100).toStringAsFixed(2) ?? "",
-                        ),
-                      ),
-                      _buildYorumlar(),
-
-                      SizedBox(height: 110,),
-                    ],
-                  ),
 
                   albumilsLoading ? Center(child: CircularProgressIndicator(),) :
                   ListView(

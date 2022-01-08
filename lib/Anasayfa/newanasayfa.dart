@@ -80,69 +80,71 @@ class _NewAnasayfaState extends State<NewAnasayfa> {
         key: _scaffoldKey,
         body: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(15.0.w, 8.0.h, 15.0.w, 8.0.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                      icon: Icon(
-                        Icons.menu,
-                        size: 20.0.h,
-                      ),
-                      onPressed: () {
-                        Scaffold.of(context).openDrawer();
-                      }),
-                  Container(
-                    width: 167.0.w,
-                    height: 41.666666666666664.h,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20.8.h)),
-                        boxShadow: [
-                          BoxShadow(
-                              color: const Color(0x2b000000), offset: Offset(0, 2), blurRadius: 14.30, spreadRadius: 0)
-                        ],
-                        color: Theme.of(context).backgroundColor),
-                    child: TextFormField(
+            Center(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(15.0.w, 8.0.h, 15.0.w, 8.0.h),
+                child: Row(
+                  children: [
+                    IconButton(
+                        icon: Icon(
+                          Icons.menu,
+                          size: 20.0.h,
+                        ),
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer();
+                        }),
+                    SizedBox(width: 40.0.w,),
+                    Container(
+                      width: 167.0.w,
+                      height: 41.666666666666664.h,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20.8.h)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: const Color(0x2b000000), offset: Offset(0, 2), blurRadius: 14.30, spreadRadius: 0)
+                          ],
+                          color: Theme.of(context).backgroundColor),
+                      child: TextFormField(
 //                      keyboardType: TextInputType.text,
-                      autocorrect: false,
-                      autovalidateMode: AutovalidateMode.disabled,
-                      controller: etkinlikAraController,
-                      onFieldSubmitted: (value) {
-                        setState(() {
-                          if (value.isEmpty)
-                            streamType = StreamType.Default;
-                          else
-                            streamType = StreamType.Search;
-                        });
-                      },
-                      textInputAction: TextInputAction.search,
-                      style: TextStyle(fontSize: 15.0.spByWidth),
-                      decoration: InputDecoration(
-                        hintText: "Etkinlik Ara",
-                        hintStyle: TextStyle(
-                            color: const Color(0xbf343633),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "OpenSans",
-                            fontStyle: FontStyle.italic,
-                            fontSize: 15.3.spByWidth),
-                        border: InputBorder.none,
-                        isDense: true,
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        icon: Padding(
-                          padding: EdgeInsets.only(left: 3.0.w),
-                          child: Icon(
-                            Icons.search,
-                            color: Colors.grey,
-                            size: 18.0.h,
+                        autocorrect: false,
+                        autovalidateMode: AutovalidateMode.disabled,
+                        controller: etkinlikAraController,
+                        onFieldSubmitted: (value) {
+                          setState(() {
+                            if (value.isEmpty)
+                              streamType = StreamType.Default;
+                            else
+                              streamType = StreamType.Search;
+                          });
+                        },
+                        textInputAction: TextInputAction.search,
+                        style: TextStyle(fontSize: 15.0.spByWidth),
+                        decoration: InputDecoration(
+                          hintText: "Etkinlik Ara",
+                          hintStyle: TextStyle(
+                              color: const Color(0xbf343633),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "OpenSans",
+                              fontStyle: FontStyle.italic,
+                              fontSize: 15.3.spByWidth),
+                          border: InputBorder.none,
+                          isDense: true,
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          icon: Padding(
+                            padding: EdgeInsets.only(left: 3.0.w),
+                            child: Icon(
+                              Icons.search,
+                              color: Colors.grey,
+                              size: 18.0.h,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
 
-                ],
+                  ],
+                ),
               ),
             ),
             Expanded(

@@ -31,7 +31,7 @@ class _EtkinliklerimState extends State<Etkinliklerim>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 5, vsync: this);
+    _tabController = new TabController(length: 3, vsync: this);
     _scrollController.addListener(_scrollListener);
   }
 
@@ -107,9 +107,7 @@ class _EtkinliklerimState extends State<Etkinliklerim>
                   tabs: [
                     Tab(child: Text("Etkinliklerim")),
                     Tab(child: Text("Katıldıklarım")),
-                    Tab(child: Text("Bekleyenler")),
                     Tab(child: Text("Favoriler")),
-                    Tab(child: Text("Geçmiş")),
                   ],
                 ),
               ),
@@ -119,9 +117,7 @@ class _EtkinliklerimState extends State<Etkinliklerim>
                   children: [
                     AktifEtkinlik2(),
                     MyJoiningEvents(),
-                    BekleyenEtkinliklerim(),
                     FavorEtkinliklerim(),
-                    GecmisEtkinliklerim(),
                   ],
                 ),
               )

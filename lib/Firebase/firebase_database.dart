@@ -92,7 +92,9 @@ class FirestoreDBService {
 
   @override
   Future<Users> readUser(String userID, String email) async {
+    print("okumaya girdi"+userID);
     DocumentSnapshot _okunanUser = await _firebaseDB.collection("users").doc(userID).get();
+    print("bilgiler geldi");
     Map<String, dynamic> _okunanUserBilgileriMap = _okunanUser.data();
     if (_okunanUser.data != null) {
       Users _okunanUserNesnesi;
